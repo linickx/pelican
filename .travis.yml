@@ -15,6 +15,3 @@ after_success:
   # Report coverage results to coveralls.io
   - pip install coveralls
   - coveralls
-branches:
-  only:
-      - travis-test
