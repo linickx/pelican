@@ -55,10 +55,9 @@ See our `contribution submission and feedback guidelines <CONTRIBUTING.rst>`_.
 .. _`Pelican documentation`: http://docs.getpelican.com/
 .. _`Pelican's internals`: http://docs.getpelican.com/en/latest/internals.html
 
-.. |build-status| image:: https://travis-ci.org/getpelican/pelican.svg?branch=master
-   :target: https://travis-ci.org/getpelican/pelican
+.. |build-status| image:: https://travis-ci.org/linickx/pelican.svg?branch=travis-test
+   :target: https://travis-ci.org/linickx/pelican
    :alt: Travis CI: continuous integration status
 .. |coverage-status| image:: https://img.shields.io/coveralls/getpelican/pelican.svg
    :target: https://coveralls.io/r/getpelican/pelican
    :alt: Coveralls: code coverage status
-

@@ -25,7 +25,7 @@ from pelican.settings import read_settings
 from pelican.utils import clean_output_dir, folder_watcher, file_watcher
 from pelican.writers import Writer
 
-__version__ = "3.5.0"
+__version__ = "3.5.0-NB"
 
 DEFAULT_CONFIG_NAME = 'pelicanconf.py'
 
@@ -146,7 +146,7 @@ class Pelican(object):
         context = self.settings.copy()
         # Share these among all the generators and content objects:
         context['filenames'] = {}  # maps source path to Content object or None
-        context['localsiteurl'] = self.settings['SITEURL'] 
+        context['localsiteurl'] = self.settings['SITEURL']
 
         generators = [
             cls(
@@ -226,7 +226,7 @@ class Pelican(object):
                 logger.debug('Found writer: %s', writer)
             else:
                 logger.warning(
-                    '%s writers found, using only first one: %s', 
+                    '%s writers found, using only first one: %s',
                     writers_found, writer)
             return writer(self.output_path, settings=self.settings)
 
