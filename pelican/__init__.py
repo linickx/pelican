@@ -25,7 +25,7 @@ from pelican.settings import read_settings
 from pelican.utils import clean_output_dir, folder_watcher, file_watcher
 from pelican.writers import Writer
 
-__version__ = "3.5.0-NB"
+__version__ = "3.5.0-NB-feed-url"
 
 DEFAULT_CONFIG_NAME = 'pelicanconf.py'
 
@@ -128,7 +128,19 @@ class Pelican(object):
 
         for new, old in [('FEED', 'FEED_ATOM'), ('TAG_FEED', 'TAG_FEED_ATOM'),
                          ('CATEGORY_FEED', 'CATEGORY_FEED_ATOM'),
-                         ('TRANSLATION_FEED', 'TRANSLATION_FEED_ATOM')]:
+                         ('TRANSLATION_FEED', 'TRANSLATION_FEED_ATOM'),
+                         ('FEED_ATOM', 'FEED_ATOM_SAVE_AS'),
+                         ('FEED_RSS', 'FEED_RSS_SAVE_AS'),
+                         ('FEED_ALL_ATOM', 'FEED_ALL_ATOM_SAVE_AS'),
+                         ('FEED_ALL_RSS', 'FEED_ALL_RSS_SAVE_AS'),
+                         ('CATEGORY_FEED_ATOM', 'CATEGORY_FEED_ATOM_SAVE_AS'),
+                         ('CATEGORY_FEED_RSS', 'CATEGORY_FEED_RSS_SAVE_AS'),
+                         ('AUTHOR_FEED_ATOM', 'AUTHOR_FEED_ATOM_SAVE_AS'),
+                         ('AUTHOR_FEED_RSS', 'AUTHOR_FEED_RSS_SAVE_AS'),
+                         ('TAG_FEED_ATOM', 'TAG_FEED_ATOM_SAVE_AS'),
+                         ('TAG_FEED_RSS', 'TAG_FEED_RSS_SAVE_AS'),
+                         ('TRANSLATION_FEED_ATOM', 'TRANSLATION_FEED_ATOM_SAVE_AS'),
+                         ('TRANSLATION_FEED_RSS', 'TRANSLATION_FEED_RSS_SAVE_AS')]:
             if self.settings.get(new, False):
                 logger.warning(
                     'Found deprecated `%(new)s` in settings. Modify %(new)s '
