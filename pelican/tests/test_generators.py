@@ -113,7 +113,7 @@ class TestArticlesGenerator(unittest.TestCase):
                                              'feeds/all.atom.xml', feed_slug='feeds/all.atom.xml')
 
         generator = ArticlesGenerator(
-            context=settings, settings=get_settings(FEED_ALL_ATOM=None),
+            context=settings, settings=get_settings(FEED_ALL_ATOM_SAVE_AS=None),
             path=None, theme=settings['THEME'], output_path=None)
         writer = MagicMock()
         generator.generate_feeds(writer)
