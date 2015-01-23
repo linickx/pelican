@@ -98,10 +98,7 @@ class Writer(object):
             'SITEURL', path_to_url(get_relative_path(path)))
 
         self.feed_domain = context.get('FEED_DOMAIN')
-        if feed_slug is None:
-            self.feed_url = '{}/{}'.format(self.feed_domain, path)
-        else:
-            self.feed_url = self.feed_domain + '/' + feed_slug
+        self.feed_url = self.feed_domain + '/' + feed_slug
 
         feed = self._create_new_feed(feed_type, context)
 
