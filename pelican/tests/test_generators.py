@@ -110,7 +110,7 @@ class TestArticlesGenerator(unittest.TestCase):
         writer = MagicMock()
         generator.generate_feeds(writer)
         writer.write_feed.assert_called_with([], settings,
-                                             'feeds/all.atom.xml')
+                                             'feeds/all.atom.xml', feed_slug='feeds/all.atom.xml')
 
         generator = ArticlesGenerator(
             context=settings, settings=get_settings(FEED_ALL_ATOM=None),
@@ -655,4 +655,3 @@ class TestStaticGenerator(unittest.TestCase):
 
         self.assertTrue(any(name.endswith(".md") for name in staticnames),
             "STATIC_EXCLUDE_SOURCES=False failed to include a markdown file")
-
